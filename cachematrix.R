@@ -1,8 +1,12 @@
 makeCacheMatrix <- function(x = matrix()) {
 ## 
 ##
-## initialize inver locally to NULL - will use this when cacheinverse function
-## is called 
+## initialize inver locally to NULL - we need to do this so inver is 
+## in the parent enviornment.  Otherwise below when we write
+## inver <<- NULL inver would be created in the Global enviornment. 
+## we can set this to inver <<- NULL and the code works.  
+## But we now have an inver variable in the global enviornment rather than in the parent enviornment.
+
 
         inver <- NULL  
 
